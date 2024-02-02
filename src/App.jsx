@@ -5,11 +5,10 @@ import { useState } from "react";
 
 function App() {
   const [calVal, setCalVal] = useState("");
-  
-  const onButtonClick = (buttonText) => {
-    
+
+  const onButtonClick = buttonText => {
     if (buttonText === "C") {
-      setCalVal('');
+      setCalVal("");
     } else if (buttonText === "=") {
       const result = eval(calVal);
       setCalVal(result);
@@ -21,7 +20,7 @@ function App() {
 
   return (
     <div className={styles.calculator}>
-      <Display> displayValue={calVal}</Display>
+      <Display displayValue={calVal}></Display>
       <ButtonsContainer onButtonClick={onButtonClick}></ButtonsContainer>
     </div>
   );
